@@ -1,0 +1,34 @@
+USE QuanLyTruongHocDB;
+GO
+
+CREATE TABLE [USER] (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    ho_ten NVARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    mat_khau VARCHAR(255) NOT NULL,
+    vai_tro VARCHAR(20) NOT NULL,
+    trang_thai BIT DEFAULT 1,
+    ngay_tao DATETIME DEFAULT GETDATE(),
+    cap_nhat DATETIME DEFAULT GETDATE()
+);
+
+CREATE TABLE GIAO_VIEN (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT UNIQUE NOT NULL,
+    ma_gv VARCHAR(20) UNIQUE NOT NULL,
+    chuyen_mon NVARCHAR(100),
+    so_dien_thoai VARCHAR(20),
+    ngay_tao DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (user_id) REFERENCES [USER](id)
+);
+
+CREATE TABLE HOC_SINH (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    user_id INT UNIQUE NOT NULL,
+    ma_hs VARCHAR(20) UNIQUE NOT NULL,
+    ngay_sinh DATE,
+    gioi_tinh NVARCHAR(10),
+    dia_chi NVARCHAR(MAX),
+    hinh_anh VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES [USER](id)
+);
