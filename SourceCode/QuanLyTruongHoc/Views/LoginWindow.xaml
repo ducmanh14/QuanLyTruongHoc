@@ -34,13 +34,13 @@
                 <TextBox x:Name="txtEmail"
                          Height="40"
                          Margin="0 5 0 15"
-                         Padding="10 0"/>
+                         Padding="10"/>
 
                 <TextBlock Text="Mật khẩu" FontWeight="SemiBold"/>
                 <PasswordBox x:Name="txtPassword"
                              Height="40"
                              Margin="0 5 0 25"
-                             Padding="10 0"/>
+                             Padding="10"/>
 
                 <Button Content="Đăng nhập"
                         Height="45"
