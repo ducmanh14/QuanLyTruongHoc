@@ -35,3 +35,4 @@ D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\QuanLyTruongHoc.csproj.C
 D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\QuanLyTr.D11F8110.Up2Date
 D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\QuanLyTruongHoc.exe
 D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\QuanLyTruongHoc.pdb
+D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\bin\Debug\System.Data.SqlClient.dll
