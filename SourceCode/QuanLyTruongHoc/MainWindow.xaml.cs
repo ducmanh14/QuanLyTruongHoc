@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using QuanLyTruongHoc.Views;
 
 namespace QuanLyTruongHoc
 {
@@ -45,6 +46,20 @@ namespace QuanLyTruongHoc
                 btnGrade.Content = "Xem điểm";
                 btnAttendance.Content = "Nhập mã điểm danh";
             }
+        }
+        private void BtnTeacher_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new TeacherManagementPage());
+        }
+
+        private void BtnSubject_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SubjectManagementPage());
+        }
+
+        private void BtnAssignment_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new TeachingAssignmentPage());
         }
     }
 }

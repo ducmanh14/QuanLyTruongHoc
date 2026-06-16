@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\
+C:\Users\buiqu\source\repos\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\obj\Debug\
 QuanLyTruongHoc
 none
 false
 DEBUG;TRACE
-D:\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\App.xaml
-2-996633856
+C:\Users\buiqu\source\repos\QuanLyTruongHoc\SourceCode\QuanLyTruongHoc\App.xaml
+51958567045
 
-10745822100
-142099894907
-MainWindow.xaml;Views\LoginWindow.xaml;
+19-786255176
+14-1252482942
+MainWindow.xaml;Views\LoginWindow.xaml;Views\SubjectManagementPage.xaml;Views\TeacherManagementPage.xaml;Views\TeachingAssignmentPage.xaml;
 
 False
 

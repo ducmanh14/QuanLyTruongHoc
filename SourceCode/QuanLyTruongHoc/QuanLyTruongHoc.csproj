@@ -58,9 +58,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\GiaoVien.cs" />
+    <Compile Include="Models\MonHoc.cs" />
+    <Compile Include="Models\PhanCongGiangDay.cs" />
+    <Compile Include="Services\GiaoVienService.cs" />
+    <Compile Include="Services\MonHocService.cs" />
+    <Compile Include="Services\PhanCongGiangDayService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubjectManagementPage.xaml.cs">
+      <DependentUpon>SubjectManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeacherManagementPage.xaml.cs">
+      <DependentUpon>TeacherManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TeachingAssignmentPage.xaml.cs">
+      <DependentUpon>TeachingAssignmentPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +91,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubjectManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeacherManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TeachingAssignmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
