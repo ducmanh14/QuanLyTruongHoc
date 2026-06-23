@@ -61,5 +61,20 @@ namespace QuanLyTruongHoc
         {
             MainFrame.Navigate(new TeachingAssignmentPage());
         }
+        private void BtnStudent_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new StudentManagementPage());
+        }
+
+        private void BtnClass_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ClassManagementPage());
+        }
+
+        private void BtnStudentClass_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new StudentClassPage());
+        }
+
     }
 }

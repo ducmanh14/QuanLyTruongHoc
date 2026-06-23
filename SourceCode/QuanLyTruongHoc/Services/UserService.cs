@@ -17,7 +17,7 @@ namespace QuanLyTruongHoc.Services
                     SELECT id, ho_ten, email, mat_khau, vai_tro, trang_thai
                     FROM [USER]
                     WHERE email = @Email 
-                    AND mat_khau = @MatKhau 
+                    AND mat_khau = @MatKhau
                     AND trang_thai = 1
                 ";
 

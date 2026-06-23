@@ -1,0 +1,71 @@
+﻿<Page x:Class="QuanLyTruongHoc.Views.ClassManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#F4F6F8">
+
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Quản lý lớp học"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Foreground="#0F172A"/>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20" Margin="0 0 0 20">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <TextBlock Text="Tên lớp"/>
+                        <TextBox x:Name="txtTenLop" Height="35"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                        <TextBlock Text="Khối"/>
+                        <TextBox x:Name="txtKhoi" Height="35"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Margin="0 0 10 0">
+                        <TextBlock Text="Niên khóa"/>
+                        <TextBox x:Name="txtNienKhoa" Height="35"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3">
+                        <TextBlock Text="Sĩ số"/>
+                        <TextBox x:Name="txtSiSo" Height="35"/>
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Margin="0 18 0 0">
+                    <Button Content="Thêm lớp" Width="100" Height="38" Background="#2563EB" Foreground="White" Click="BtnAdd_Click"/>
+                    <Button Content="Sửa lớp" Width="100" Height="38" Margin="10 0 0 0" Background="#16A34A" Foreground="White" Click="BtnUpdate_Click"/>
+                    <Button Content="Xóa lớp" Width="100" Height="38" Margin="10 0 0 0" Background="#DC2626" Foreground="White" Click="BtnDelete_Click"/>
+                    <Button Content="Làm mới" Width="100" Height="38" Margin="10 0 0 0" Click="BtnClear_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Background="White" CornerRadius="12" Padding="20">
+            <DataGrid x:Name="dgClasses" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DgClasses_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="70"/>
+                    <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}" Width="180"/>
+                    <DataGridTextColumn Header="Khối" Binding="{Binding Khoi}" Width="100"/>
+                    <DataGridTextColumn Header="Niên khóa" Binding="{Binding NienKhoa}" Width="160"/>
+                    <DataGridTextColumn Header="Sĩ số" Binding="{Binding SiSo}" Width="100"/>
+                    <DataGridTextColumn Header="Ngày tạo" Binding="{Binding NgayTao}" Width="180"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

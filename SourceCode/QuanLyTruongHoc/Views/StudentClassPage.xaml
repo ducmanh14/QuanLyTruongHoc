@@ -1,0 +1,54 @@
+﻿<Page x:Class="QuanLyTruongHoc.Views.StudentClassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#F4F6F8">
+
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Xếp học sinh vào lớp"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   Foreground="#0F172A"/>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20" Margin="0 0 0 20">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="ID học sinh:" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtHocSinhId" Width="120" Height="35" Margin="10 0"/>
+
+                    <TextBlock Text="ID lớp:" VerticalAlignment="Center" Margin="20 0 0 0"/>
+                    <TextBox x:Name="txtLopId" Width="120" Height="35" Margin="10 0"/>
+
+                    <Button Content="Xếp vào lớp" Width="120" Height="35" Margin="20 0 0 0" Background="#2563EB" Foreground="White" Click="BtnAddToClass_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                    <Button Content="Chuyển sang nghỉ" Width="140" Height="35" Background="#DC2626" Foreground="White" Click="BtnChangeToNghi_Click"/>
+                    <Button Content="Chuyển đang học" Width="140" Height="35" Margin="10 0 0 0" Background="#16A34A" Foreground="White" Click="BtnChangeToDangHoc_Click"/>
+                    <Button Content="Tải lại" Width="100" Height="35" Margin="10 0 0 0" Click="BtnReload_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Background="White" CornerRadius="12" Padding="20">
+            <DataGrid x:Name="dgStudentClass" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DgStudentClass_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="70"/>
+                    <DataGridTextColumn Header="Lớp ID" Binding="{Binding LopId}" Width="80"/>
+                    <DataGridTextColumn Header="HS ID" Binding="{Binding HocSinhId}" Width="80"/>
+                    <DataGridTextColumn Header="Tên lớp" Binding="{Binding TenLop}" Width="130"/>
+                    <DataGridTextColumn Header="Mã HS" Binding="{Binding MaHS}" Width="120"/>
+                    <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}" Width="200"/>
+                    <DataGridTextColumn Header="Trạng thái" Binding="{Binding TrangThai}" Width="130"/>
+                    <DataGridTextColumn Header="Ngày vào lớp" Binding="{Binding NgayVaoLop}" Width="160"/>
+                    <DataGridTextColumn Header="Ngày rời lớp" Binding="{Binding NgayRoiLop}" Width="160"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</Page>

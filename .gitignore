@@ -18,4 +18,7 @@ Release/
 .idea/
 
 # Logs
-*.log
+*.logbin/
+obj/
+.vs/
+*.user

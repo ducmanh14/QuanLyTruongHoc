@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Quản lý trường học"
         Height="720"
-        Width="1200"
+        Width="1500"
         WindowStartupLocation="CenterScreen"
         Background="#F4F6F8">
 
@@ -29,9 +29,23 @@
                            Margin="0 0 0 35"/>
 
                 <Button x:Name="btnHome" Content="Trang chủ" Height="42" Margin="0 5"/>
-                <Button x:Name="btnStudent" Content="Quản lý học sinh" Height="42" Margin="0 5"/>
+                <Button x:Name="btnStudent"
+                        Content="Quản lý học sinh"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnStudent_Click"/>
 
-                <Button x:Name="btnClass" Content="Quản lý lớp học" Height="42" Margin="0 5"/>
+                <Button x:Name="btnClass"
+                        Content="Quản lý lớp học"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnClass_Click"/>
+                <Button x:Name="btnStudentClass"
+        Content="Xếp học sinh vào lớp"
+        Height="42"
+        Margin="0 5"
+        Click="BtnStudentClass_Click"/>
+
 
                 <!-- 3 nút đã được thêm sự kiện Click -->
                 <Button x:Name="btnTeacher"

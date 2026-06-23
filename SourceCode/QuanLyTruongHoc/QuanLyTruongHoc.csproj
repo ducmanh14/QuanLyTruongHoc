@@ -59,14 +59,29 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\GiaoVien.cs" />
+    <Compile Include="Models\HocSinh.cs" />
+    <Compile Include="Models\LopHoc.cs" />
+    <Compile Include="Models\LopHocSinh.cs" />
     <Compile Include="Models\MonHoc.cs" />
     <Compile Include="Models\PhanCongGiangDay.cs" />
     <Compile Include="Services\GiaoVienService.cs" />
+    <Compile Include="Services\HocSinhService.cs" />
+    <Compile Include="Services\LopHocService.cs" />
+    <Compile Include="Services\LopHocSinhService.cs" />
     <Compile Include="Services\MonHocService.cs" />
     <Compile Include="Services\PhanCongGiangDayService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Views\ClassManagementPage.xaml.cs">
+      <DependentUpon>ClassManagementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StudentClassPage.xaml.cs">
+      <DependentUpon>StudentClassPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StudentManagementPage.xaml.cs">
+      <DependentUpon>StudentManagementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubjectManagementPage.xaml.cs">
       <DependentUpon>SubjectManagementPage.xaml</DependentUpon>
@@ -90,7 +105,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ClassManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StudentClassPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StudentManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +165,11 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="01_Create_Tables.sql" />
+    <Content Include="02_Insert_Sample_Data.sql" />
+    <Content Include="03_TestQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
