@@ -1,8 +1,8 @@
 CREATE DATABASE QuanLyTruongHocDB;
-GO
+
 
 USE QuanLyTruongHocDB;
-GO
+
 
 CREATE TABLE [USER] (
     id INT IDENTITY(1,1) PRIMARY KEY,

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using QuanLyTruongHoc.Services;
 
 namespace QuanLyTruongHoc.Views
@@ -23,11 +24,15 @@ namespace QuanLyTruongHoc.Views
                 return;
             }
 
+            // Gọi hàm đăng nhập chuẩn của hệ thống
             var user = userService.Login(email, password);
 
             if (user != null)
             {
-                MainWindow mainWindow = new MainWindow(user.HoTen, user.VaiTro);
+                // SỬA DÒNG MỞ MAINWINDOW THEO ĐÚNG HƯỚNG DẪN 
+                // Truyền đủ 3 tham số: Id, HoTen, VaiTro sang màn hình chính
+                MainWindow mainWindow = new MainWindow(user.Id, user.HoTen, user.VaiTro);
+
                 mainWindow.Show();
                 this.Close();
             }

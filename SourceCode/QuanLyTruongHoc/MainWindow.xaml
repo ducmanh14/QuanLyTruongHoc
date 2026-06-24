@@ -13,7 +13,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- MENU TRÁI -->
         <Border Background="#1E293B">
             <StackPanel Margin="20">
                 <TextBlock Text="QUẢN LÝ"
@@ -41,13 +40,12 @@
                         Margin="0 5"
                         Click="BtnClass_Click"/>
                 <Button x:Name="btnStudentClass"
-        Content="Xếp học sinh vào lớp"
-        Height="42"
-        Margin="0 5"
-        Click="BtnStudentClass_Click"/>
+                        Content="Xếp học sinh vào lớp"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnStudentClass_Click"/>
 
 
-                <!-- 3 nút đã được thêm sự kiện Click -->
                 <Button x:Name="btnTeacher"
                         Content="Quản lý giáo viên"
                         Height="42"
@@ -66,23 +64,20 @@
                         Margin="0 5"
                         Click="BtnAssignment_Click"/>
 
-                <Button x:Name="btnAttendance" Content="Điểm danh" Height="42" Margin="0 5"/>
-                <Button x:Name="btnGrade" Content="Quản lý điểm" Height="42" Margin="0 5"/>
-                <Button x:Name="btnProfile" Content="Xem hồ sơ" Height="42" Margin="0 5"/>
+                <Button x:Name="btnAttendance" Content="Điểm danh" Height="42" Margin="0 5" Click="BtnAttendance_Click"/>
+                <Button x:Name="btnAttendanceHistory" Content="Lịch sử điểm danh" Height="42" Margin="0 5" Click="BtnAttendanceHistory_Click"/>
+                <Button x:Name="btnGrade" Content="Quản lý điểm" Height="42" Margin="0 5" Click="BtnGrade_Click"/>
+                <Button x:Name="btnProfile" Content="Xem hồ sơ" Height="42" Margin="0 5" Click="BtnProfile_Click"/>
                 <Button x:Name="btnChangePassword" Content="Đổi mật khẩu" Height="42" Margin="0 5"/>
             </StackPanel>
         </Border>
 
-        <!-- NỘI DUNG CHÍNH (BÊN PHẢI) -->
         <Grid Grid.Column="1" Margin="25">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <!-- Dòng 0: Chứa Header -->
                 <RowDefinition Height="*"/>
-                <!-- Dòng 1: Chứa MainFrame để load các trang -->
             </Grid.RowDefinitions>
 
-            <!-- Header Cố định -->
             <Border Grid.Row="0" Background="White" CornerRadius="14" Padding="25">
                 <StackPanel>
                     <TextBlock x:Name="txtWelcome"
@@ -99,8 +94,6 @@
                 </StackPanel>
             </Border>
 
-            <!-- Vùng hiển thị nội dung động (Frame) -->
-            <!-- NavigationUIVisibility="Hidden" giúp ẩn thanh điều hướng xấu xí mặc định của WPF -->
             <Frame x:Name="MainFrame" 
                    Grid.Row="1" 
                    Margin="0 25 0 0" 

@@ -58,24 +58,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Diem.cs" />
+    <Compile Include="Models\DiemDanh.cs" />
     <Compile Include="Models\GiaoVien.cs" />
     <Compile Include="Models\HocSinh.cs" />
     <Compile Include="Models\LopHoc.cs" />
     <Compile Include="Models\LopHocSinh.cs" />
     <Compile Include="Models\MonHoc.cs" />
     <Compile Include="Models\PhanCongGiangDay.cs" />
+    <Compile Include="Models\Profile.cs" />
+    <Compile Include="Services\DiemDanhService.cs" />
+    <Compile Include="Services\DiemService.cs" />
     <Compile Include="Services\GiaoVienService.cs" />
     <Compile Include="Services\HocSinhService.cs" />
     <Compile Include="Services\LopHocService.cs" />
     <Compile Include="Services\LopHocSinhService.cs" />
     <Compile Include="Services\MonHocService.cs" />
     <Compile Include="Services\PhanCongGiangDayService.cs" />
+    <Compile Include="Services\ProfileService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Views\AttendanceHistoryPage.xaml.cs">
+      <DependentUpon>AttendanceHistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AttendancePage.xaml.cs">
+      <DependentUpon>AttendancePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ClassManagementPage.xaml.cs">
       <DependentUpon>ClassManagementPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\GradeManagementPage.xaml.cs">
+      <DependentUpon>GradeManagementPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StudentClassPage.xaml.cs">
       <DependentUpon>StudentClassPage.xaml</DependentUpon>
@@ -105,11 +123,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AttendanceHistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AttendancePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ClassManagementPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\GradeManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,17 +1,21 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using QuanLyTruongHoc.Views;
 
 namespace QuanLyTruongHoc
 {
     public partial class MainWindow : Window
     {
+        private int _userId;
         private string _hoTen;
         private string _vaiTro;
 
-        public MainWindow(string hoTen, string vaiTro)
+        // Constructor nhận 3 tham số từ LoginWindow truyền sang
+        public MainWindow(int userId, string hoTen, string vaiTro)
         {
             InitializeComponent();
 
+            _userId = userId;
             _hoTen = hoTen;
             _vaiTro = vaiTro;
 
@@ -21,6 +25,7 @@ namespace QuanLyTruongHoc
             ApplyPermission();
         }
 
+        // Logic phân quyền hiển thị menu
         private void ApplyPermission()
         {
             if (_vaiTro == "admin")
@@ -47,6 +52,29 @@ namespace QuanLyTruongHoc
                 btnAttendance.Content = "Nhập mã điểm danh";
             }
         }
+
+        
+        private void BtnAttendance_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AttendancePage());
+        }
+
+        private void BtnAttendanceHistory_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AttendanceHistoryPage());
+        }
+
+        private void BtnGrade_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new GradeManagementPage());
+        }
+
+        private void BtnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ProfilePage(_userId, _vaiTro));
+        }
+
+        // CÁC HÀM ĐIỀU HƯỚNG CŨ CỦA DỰ ÁN
         private void BtnTeacher_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new TeacherManagementPage());
@@ -61,6 +89,7 @@ namespace QuanLyTruongHoc
         {
             MainFrame.Navigate(new TeachingAssignmentPage());
         }
+
         private void BtnStudent_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new StudentManagementPage());
@@ -75,6 +104,5 @@ namespace QuanLyTruongHoc
         {
             MainFrame.Navigate(new StudentClassPage());
         }
-
     }
 }
