@@ -59,25 +59,59 @@ namespace QuanLyTruongHoc.Services
 
                 try
                 {
+                    int oldClassId = 0;
+
+                    // Lấy lớp hiện tại của học sinh (nếu có)
+                    string getOldClass = @"
+                SELECT TOP 1 lop_id
+                FROM LOP_HOC_SINH
+                WHERE hoc_sinh_id = @HocSinhId
+                AND trang_thai = 'dang_hoc'";
+
+                    SqlCommand cmdOld = new SqlCommand(getOldClass, conn, trans);
+                    cmdOld.Parameters.AddWithValue("@HocSinhId", hocSinhId);
+
+                    object result = cmdOld.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        oldClassId = Convert.ToInt32(result);
+                    }
+
+                    // Cho nghỉ lớp cũ
                     string closeOld = @"
-                        UPDATE LOP_HOC_SINH
-                        SET trang_thai = 'nghi',
-                            ngay_roi_lop = GETDATE()
-                        WHERE hoc_sinh_id = @HocSinhId
-                        AND trang_thai = 'dang_hoc'";
+                UPDATE LOP_HOC_SINH
+                SET trang_thai = 'nghi',
+                    ngay_roi_lop = GETDATE()
+                WHERE hoc_sinh_id = @HocSinhId
+                AND trang_thai = 'dang_hoc'";
 
                     SqlCommand cmdClose = new SqlCommand(closeOld, conn, trans);
                     cmdClose.Parameters.AddWithValue("@HocSinhId", hocSinhId);
                     cmdClose.ExecuteNonQuery();
 
+                    // Thêm vào lớp mới
                     string insertNew = @"
-                        INSERT INTO LOP_HOC_SINH (lop_id, hoc_sinh_id, trang_thai, ngay_vao_lop)
-                        VALUES (@LopId, @HocSinhId, 'dang_hoc', GETDATE())";
+                INSERT INTO LOP_HOC_SINH
+                (lop_id, hoc_sinh_id, trang_thai, ngay_vao_lop)
+                VALUES
+                (@LopId, @HocSinhId, 'dang_hoc', GETDATE())";
 
                     SqlCommand cmdInsert = new SqlCommand(insertNew, conn, trans);
                     cmdInsert.Parameters.AddWithValue("@LopId", lopId);
                     cmdInsert.Parameters.AddWithValue("@HocSinhId", hocSinhId);
                     cmdInsert.ExecuteNonQuery();
+                    // Cập nhật lại sĩ số của tất cả các lớp
+                    string updateAllClass = @"
+                UPDATE LOP_HOC
+                SET si_so =
+                (SELECT COUNT(*)
+                FROM LOP_HOC_SINH
+                WHERE LOP_HOC_SINH.lop_id = LOP_HOC.id
+                AND LOP_HOC_SINH.trang_thai = 'dang_hoc')";
+
+                    SqlCommand cmdUpdate = new SqlCommand(updateAllClass, conn, trans);
+                    cmdUpdate.ExecuteNonQuery();
 
                     trans.Commit();
                     return true;

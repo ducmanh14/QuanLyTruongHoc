@@ -143,5 +143,10 @@ namespace QuanLyTruongHoc.Views
             txtSoDienThoai.Clear();
             dgTeachers.SelectedItem = null;
         }
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

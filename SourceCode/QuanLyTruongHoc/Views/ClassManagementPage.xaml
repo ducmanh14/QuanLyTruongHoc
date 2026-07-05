@@ -27,22 +27,22 @@
 
                     <StackPanel Grid.Column="0" Margin="0 0 10 0">
                         <TextBlock Text="Tên lớp"/>
-                        <TextBox x:Name="txtTenLop" Height="35"/>
+                        <TextBox x:Name="txtTenLop" Height="35" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="0 0 10 0">
                         <TextBlock Text="Khối"/>
-                        <TextBox x:Name="txtKhoi" Height="35"/>
+                        <TextBox x:Name="txtKhoi" Height="35" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="0 0 10 0">
                         <TextBlock Text="Niên khóa"/>
-                        <TextBox x:Name="txtNienKhoa" Height="35"/>
+                        <TextBox x:Name="txtNienKhoa" Height="35" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="3">
                         <TextBlock Text="Sĩ số"/>
-                        <TextBox x:Name="txtSiSo" Height="35"/>
+                        <TextBox x:Name="txtSiSo" Height="35" Padding="5"/>
                     </StackPanel>
                 </Grid>
 

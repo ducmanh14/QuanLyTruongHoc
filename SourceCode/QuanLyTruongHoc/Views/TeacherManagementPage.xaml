@@ -19,7 +19,7 @@
         <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20" Margin="0 0 0 15">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 15">
-                    <TextBox x:Name="txtSearch" Width="300" Height="35" Padding="10 0" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="txtSearch" Width="300" Height="35" Padding="5" VerticalContentAlignment="Center"/>
                     <Button Content="Tìm kiếm" Width="100" Height="35" Margin="10 0 0 0" Click="BtnSearch_Click"/>
                     <Button Content="Tải lại" Width="100" Height="35" Margin="10 0 0 0" Click="BtnReload_Click"/>
                 </StackPanel>
@@ -37,27 +37,27 @@
 
                     <StackPanel Grid.Row="0" Grid.Column="0" Margin="0 0 10 10">
                         <TextBlock Text="Mã giáo viên" Margin="0 0 0 4" Foreground="#475569"/>
-                        <TextBox x:Name="txtMaGV" Height="32" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtMaGV" Height="32" VerticalContentAlignment="Center" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="0" Grid.Column="1" Margin="0 0 10 10">
                         <TextBlock Text="Họ tên" Margin="0 0 0 4" Foreground="#475569"/>
-                        <TextBox x:Name="txtHoTen" Height="32" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtHoTen" Height="32" VerticalContentAlignment="Center" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="0" Grid.Column="2" Margin="0 0 0 10">
                         <TextBlock Text="Email" Margin="0 0 0 4" Foreground="#475569"/>
-                        <TextBox x:Name="txtEmail" Height="32" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtEmail" Height="32" VerticalContentAlignment="Center" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="0" Margin="0 0 10 0">
                         <TextBlock Text="Chuyên môn" Margin="0 0 0 4" Foreground="#475569"/>
-                        <TextBox x:Name="txtChuyenMon" Height="32" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtChuyenMon" Height="32" VerticalContentAlignment="Center" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="1" Margin="0 0 10 0">
                         <TextBlock Text="Số điện thoại" Margin="0 0 0 4" Foreground="#475569"/>
-                        <TextBox x:Name="txtSoDienThoai" Height="32" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="txtSoDienThoai" Height="32" VerticalContentAlignment="Center" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5 0 0 0">

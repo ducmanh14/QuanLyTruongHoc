@@ -19,10 +19,10 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="ID học sinh:" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtHocSinhId" Width="120" Height="35" Margin="10 0"/>
+                    <TextBox x:Name="txtHocSinhId" Width="120" Height="35" Margin="10 0" Padding="5"/>
 
                     <TextBlock Text="ID lớp:" VerticalAlignment="Center" Margin="20 0 0 0"/>
-                    <TextBox x:Name="txtLopId" Width="120" Height="35" Margin="10 0"/>
+                    <TextBox x:Name="txtLopId" Width="120" Height="35" Margin="10 0" Padding="5"/>
 
                     <Button Content="Xếp vào lớp" Width="120" Height="35" Margin="20 0 0 0" Background="#2563EB" Foreground="White" Click="BtnAddToClass_Click"/>
                 </StackPanel>

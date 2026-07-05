@@ -7,98 +7,279 @@
         WindowStartupLocation="CenterScreen"
         Background="#F4F6F8">
 
+    <Window.Resources>
+
+        <!-- Style menu -->
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="42"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#38BDF8"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
+
         <Grid.ColumnDefinitions>
+
             <ColumnDefinition Width="250"/>
+
             <ColumnDefinition Width="*"/>
+
         </Grid.ColumnDefinitions>
 
+        <!-- MENU -->
+
         <Border Background="#1E293B">
-            <StackPanel Margin="20">
-                <TextBlock Text="QUẢN LÝ"
-                           Foreground="White"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Margin="0 20 0 0"/>
+            <Grid>
 
-                <TextBlock Text="TRƯỜNG HỌC"
-                           Foreground="#38BDF8"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Margin="0 0 0 35"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                <Button x:Name="btnHome" Content="Trang chủ" Height="42" Margin="0 5"/>
-                <Button x:Name="btnStudent"
+                <!-- Logo -->
+                <StackPanel Grid.Row="0" Margin="20">
+                    <TextBlock Text="QUẢN LÝ"
+                       Foreground="White"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0 20 0 0"/>
+
+                    <TextBlock Text="TRƯỜNG HỌC"
+                       Foreground="#38BDF8"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0 0 0 20"/>
+                </StackPanel>
+
+                <!-- Menu có thanh cuộn -->
+                <ScrollViewer
+                        Grid.Row="1"
+                        VerticalScrollBarVisibility="Hidden"
+                        HorizontalScrollBarVisibility="Disabled"
+                        PanningMode="VerticalOnly">
+
+                    <StackPanel Margin="20,0">
+
+                        <Button x:Name="btnHome"
+                        Content="Trang chủ"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnHome_Click"/>
+
+                        <Button x:Name="btnStudent"
                         Content="Quản lý học sinh"
                         Height="42"
                         Margin="0 5"
                         Click="BtnStudent_Click"/>
 
-                <Button x:Name="btnClass"
+                        <Button x:Name="btnClass"
                         Content="Quản lý lớp học"
                         Height="42"
                         Margin="0 5"
                         Click="BtnClass_Click"/>
-                <Button x:Name="btnStudentClass"
+
+                        <Button x:Name="btnStudentClass"
                         Content="Xếp học sinh vào lớp"
                         Height="42"
                         Margin="0 5"
                         Click="BtnStudentClass_Click"/>
 
-
-                <Button x:Name="btnTeacher"
+                        <Button x:Name="btnTeacher"
                         Content="Quản lý giáo viên"
                         Height="42"
                         Margin="0 5"
                         Click="BtnTeacher_Click"/>
 
-                <Button x:Name="btnSubject"
+                        <Button x:Name="btnSubject"
                         Content="Môn học"
                         Height="42"
                         Margin="0 5"
                         Click="BtnSubject_Click"/>
 
-                <Button x:Name="btnAssignment"
+                        <Button x:Name="btnAssignment"
                         Content="Phân công giảng dạy"
                         Height="42"
                         Margin="0 5"
                         Click="BtnAssignment_Click"/>
 
-                <Button x:Name="btnAttendance" Content="Điểm danh" Height="42" Margin="0 5" Click="BtnAttendance_Click"/>
-                <Button x:Name="btnAttendanceHistory" Content="Lịch sử điểm danh" Height="42" Margin="0 5" Click="BtnAttendanceHistory_Click"/>
-                <Button x:Name="btnGrade" Content="Quản lý điểm" Height="42" Margin="0 5" Click="BtnGrade_Click"/>
-                <Button x:Name="btnProfile" Content="Xem hồ sơ" Height="42" Margin="0 5" Click="BtnProfile_Click"/>
-                <Button x:Name="btnChangePassword" Content="Đổi mật khẩu" Height="42" Margin="0 5"/>
-            </StackPanel>
+                        <Button x:Name="btnAttendance"
+                        Content="Điểm danh"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnAttendance_Click"/>
+
+                        <Button x:Name="btnAttendanceHistory"
+                        Content="Lịch sử điểm danh"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnAttendanceHistory_Click"/>
+
+                        <Button x:Name="btnGrade"
+                        Content="Quản lý điểm"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnGrade_Click"/>
+
+                        <Button x:Name="btnProfile"
+                        Content="Xem hồ sơ"
+                        Height="42"
+                        Margin="0 5"
+                        Click="BtnProfile_Click"/>
+
+                        <Button x:Name="btnChangePassword"
+                        Content="Đổi mật khẩu"
+                        Height="42"
+                        Margin="0 5"/>
+
+                    </StackPanel>
+
+                </ScrollViewer>
+
+                <!-- Đăng xuất cố định -->
+                <Border Grid.Row="2"
+                BorderBrush="#334155"
+                BorderThickness="0,1,0,0"
+                Padding="15">
+
+                    <Button x:Name="btnLogout"
+                    Content="🚪 Đăng xuất"
+                    Height="45"
+                    Background="#DC2626"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Click="BtnLogout_Click"/>
+
+                </Border>
+
+            </Grid>
         </Border>
 
-        <Grid Grid.Column="1" Margin="25">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <!-- Nội dung -->
 
-            <Border Grid.Row="0" Background="White" CornerRadius="14" Padding="25">
-                <StackPanel>
-                    <TextBlock x:Name="txtWelcome"
-                               FontSize="28"
-                               FontWeight="Bold"
-                               Foreground="#0F172A"
-                               Text="Xin chào!"/>
+        <Grid Grid.Column="1"
+              Margin="25">
 
-                    <TextBlock x:Name="txtRole"
-                               FontSize="16"
-                               Foreground="#64748B"
-                               Margin="0 8 0 0"
-                               Text="Vai trò: Đang tải..."/>
-                </StackPanel>
-            </Border>
+            <!-- Dashboard -->
 
-            <Frame x:Name="MainFrame" 
-                   Grid.Row="1" 
-                   Margin="0 25 0 0" 
+            <StackPanel x:Name="DashboardPanel">
+
+                <Border Background="White"
+                        CornerRadius="15"
+                        Padding="25">
+
+                    <StackPanel>
+
+                        <TextBlock x:Name="txtWelcome"
+                                   FontSize="30"
+                                   FontWeight="Bold"
+                                   Foreground="#0F172A"/>
+
+                        <TextBlock x:Name="txtRole"
+                                   FontSize="17"
+                                   Margin="0 8 0 0"
+                                   Foreground="#64748B"/>
+
+                    </StackPanel>
+
+                </Border>
+
+                <WrapPanel Margin="0 25 0 0">
+
+                    <Border Width="250"
+                            Height="130"
+                            Background="White"
+                            CornerRadius="15"
+                            Margin="0 0 20 20"
+                            Padding="20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Học sinh"
+                                       FontSize="18"/>
+
+                            <TextBlock x:Name="txtHocSinhCount"
+                                       Text="0"
+                                       FontSize="42"
+                                       FontWeight="Bold"
+                                       Foreground="#2563EB"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                    <Border Width="250"
+                            Height="130"
+                            Background="White"
+                            CornerRadius="15"
+                            Margin="0 0 20 20"
+                            Padding="20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Giáo viên"
+                                       FontSize="18"/>
+
+                            <TextBlock x:Name="txtGiaoVienCount"
+                                       Text="0"
+                                       FontSize="42"
+                                       FontWeight="Bold"
+                                       Foreground="#16A34A"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                    <Border Width="250"
+                            Height="130"
+                            Background="White"
+                            CornerRadius="15"
+                            Margin="0 0 20 20"
+                            Padding="20">
+
+                        <StackPanel>
+
+                            <TextBlock Text="Lớp học"
+                                       FontSize="18"/>
+
+                            <TextBlock x:Name="txtLopHocCount"
+                                       Text="0"
+                                       FontSize="42"
+                                       FontWeight="Bold"
+                                       Foreground="#EA580C"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </WrapPanel>
+
+            </StackPanel>
+
+            <!-- Frame -->
+
+            <Frame x:Name="MainFrame"
+                   Visibility="Collapsed"
                    NavigationUIVisibility="Hidden"/>
 
         </Grid>
+
     </Grid>
+
 </Window>

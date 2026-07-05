@@ -9,16 +9,34 @@ namespace QuanLyTruongHoc.Views
     public partial class AttendancePage : Page
     {
         private DiemDanhService service = new DiemDanhService();
+        private int _userId;
+        private string _vaiTro;
 
-        public AttendancePage()
+        public AttendancePage(int userId, string vaiTro)
         {
             InitializeComponent();
+
+            _userId = userId;
+            _vaiTro = vaiTro;
+
             LoadData();
+
+            if (_vaiTro == "hs")
+            {
+                SetStudentMode();
+            }
         }
 
         private void LoadData()
         {
-            dgAttendance.ItemsSource = service.GetAll();
+            if (_vaiTro == "hs")
+            {
+                dgAttendance.ItemsSource = service.GetAttendanceByStudent(_userId);
+            }
+            else
+            {
+                dgAttendance.ItemsSource = service.GetAll();
+            }
         }
 
         private void BtnCreateCode_Click(object sender, RoutedEventArgs e)
@@ -66,6 +84,10 @@ namespace QuanLyTruongHoc.Views
             {
                 MessageBox.Show("Điểm danh thất bại.");
             }
+        }
+        private void SetStudentMode()
+        {
+            InputPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

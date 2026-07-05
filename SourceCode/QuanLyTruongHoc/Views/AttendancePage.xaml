@@ -15,11 +15,16 @@
                    FontWeight="Bold"
                    Foreground="#0F172A"/>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20" Margin="0 0 0 20">
+        <Border x:Name="InputPanel"
+                Grid.Row="1"
+                Background="White"
+                CornerRadius="12"
+                Padding="20"
+                Margin="0 0 0 20">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Mã điểm danh:" VerticalAlignment="Center"/>
-                    <TextBox x:Name="txtMaDiemDanh" Width="150" Height="35" Margin="10 0"/>
+                    <TextBox x:Name="txtMaDiemDanh" Width="150" Height="35" Margin="10 0" Padding="5"/>
                     <Button Content="Tạo mã" Width="100" Height="35" Click="BtnCreateCode_Click"/>
                 </StackPanel>
 
@@ -33,12 +38,12 @@
 
                     <StackPanel Grid.Column="0" Margin="0 0 10 0">
                         <TextBlock Text="ID lớp"/>
-                        <TextBox x:Name="txtLopId" Height="35"/>
+                        <TextBox x:Name="txtLopId" Height="35" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="0 0 10 0">
                         <TextBlock Text="ID học sinh"/>
-                        <TextBox x:Name="txtHocSinhId" Height="35"/>
+                        <TextBox x:Name="txtHocSinhId" Height="35" Padding="5"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="0 0 10 0">
@@ -60,7 +65,7 @@
                     </StackPanel>
                 </Grid>
 
-                <TextBox x:Name="txtGhiChu" Height="35" Margin="0 15 0 0"/>
+                <TextBox x:Name="txtGhiChu" Height="35" Margin="0 15 0 0" Padding="5"/>
 
                 <Button Content="Lưu điểm danh"
                         Width="140"

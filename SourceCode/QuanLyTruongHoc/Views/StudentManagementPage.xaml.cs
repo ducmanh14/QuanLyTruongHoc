@@ -10,10 +10,38 @@ namespace QuanLyTruongHoc.Views
         private HocSinhService hocSinhService = new HocSinhService();
         private HocSinh selectedHocSinh = null;
 
-        public StudentManagementPage()
+        private string _vaiTro;
+
+        public StudentManagementPage(string vaiTro)
         {
             InitializeComponent();
+
+            _vaiTro = vaiTro;
+
             LoadData();
+
+            if (_vaiTro == "gv")
+            {
+                SetReadOnlyMode();
+            }
+        }
+
+        private void SetReadOnlyMode()
+        {
+            // Ẩn các nút chỉnh sửa
+            btnAdd.Visibility = Visibility.Collapsed;
+            btnUpdate.Visibility = Visibility.Collapsed;
+            btnDelete.Visibility = Visibility.Collapsed;
+            btnClear.Visibility = Visibility.Collapsed;
+
+            // Khóa các ô nhập
+            txtMaHS.IsReadOnly = true;
+            txtHoTen.IsReadOnly = true;
+            txtEmail.IsReadOnly = true;
+            txtDiaChi.IsReadOnly = true;
+
+            dpNgaySinh.IsEnabled = false;
+            cbGioiTinh.IsEnabled = false;
         }
 
         private void LoadData()
@@ -24,6 +52,7 @@ namespace QuanLyTruongHoc.Views
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
+
             dgStudents.ItemsSource = string.IsNullOrEmpty(keyword)
                 ? hocSinhService.GetAll()
                 : hocSinhService.Search(keyword);
@@ -146,6 +175,7 @@ namespace QuanLyTruongHoc.Views
             }
 
             string gioiTinh = "";
+
             if (cbGioiTinh.SelectedItem != null)
             {
                 gioiTinh = ((ComboBoxItem)cbGioiTinh.SelectedItem).Content.ToString();
@@ -165,13 +195,16 @@ namespace QuanLyTruongHoc.Views
         private void ClearForm()
         {
             selectedHocSinh = null;
+
             txtSearch.Clear();
             txtMaHS.Clear();
             txtHoTen.Clear();
             txtEmail.Clear();
             txtDiaChi.Clear();
+
             dpNgaySinh.SelectedDate = null;
             cbGioiTinh.SelectedIndex = -1;
+
             dgStudents.SelectedItem = null;
         }
     }

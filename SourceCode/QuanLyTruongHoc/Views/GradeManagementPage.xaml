@@ -4,72 +4,237 @@
       Background="#F4F6F8">
 
     <Grid Margin="25">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <!-- Tiêu đề -->
         <TextBlock Text="Quản lý điểm"
                    FontSize="28"
-                   FontWeight="Bold"/>
+                   FontWeight="Bold"
+                   Foreground="#0F172A"/>
 
-        <Border Grid.Row="1" Background="White" CornerRadius="12" Padding="20" Margin="0 0 0 20">
+        <!-- Form -->
+        <Border x:Name="FormPanel"
+                Grid.Row="1"
+                Background="White"
+                CornerRadius="14"
+                Padding="25"
+                Margin="0 0 0 20">
+
             <StackPanel>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
 
-                    <TextBox x:Name="txtHocSinhId" Grid.Column="0" Height="35" Margin="0 0 10 0"/>
-                    <TextBox x:Name="txtLopId" Grid.Column="1" Height="35" Margin="0 0 10 0"/>
-                    <TextBox x:Name="txtMonHocId" Grid.Column="2" Height="35" Margin="0 0 10 0"/>
-                    <TextBox x:Name="txtHocKy" Grid.Column="3" Height="35" Margin="0 0 10 0"/>
-                    <TextBox x:Name="txtNamHoc" Grid.Column="4" Height="35"/>
-                </Grid>
+                <!-- Tìm kiếm -->
+                <StackPanel Orientation="Horizontal">
 
-                <Grid Margin="0 12 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txtSearch"
+                             Width="320"
+                             Height="38"
+                             Padding="8"/>
 
-                    <ComboBox x:Name="cbLoaiDiem" Grid.Column="0" Height="35" Margin="0 0 10 0">
-                        <ComboBoxItem Content="mieng"/>
-                        <ComboBoxItem Content="15p"/>
-                        <ComboBoxItem Content="1t"/>
-                        <ComboBoxItem Content="thi"/>
-                    </ComboBox>
+                    <Button Content="Tìm kiếm"
+                            Width="100"
+                            Height="38"
+                            Margin="12 0 0 0"
+                            Click="BtnSearch_Click"/>
 
-                    <TextBox x:Name="txtGiaTri" Grid.Column="1" Height="35"/>
-                </Grid>
+                    <Button Content="Tải lại"
+                            Width="100"
+                            Height="38"
+                            Margin="12 0 0 0"
+                            Click="BtnReload_Click"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
-                    <Button Content="Thêm" Width="90" Height="35" Background="#2563EB" Foreground="White" Click="BtnAdd_Click"/>
-                    <Button Content="Sửa" Width="90" Height="35" Margin="10 0 0 0" Background="#16A34A" Foreground="White" Click="BtnUpdate_Click"/>
-                    <Button Content="Xóa" Width="90" Height="35" Margin="10 0 0 0" Background="#DC2626" Foreground="White" Click="BtnDelete_Click"/>
                 </StackPanel>
+
+                <!-- Hàng 1 -->
+                <Grid Margin="0 18 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <TextBlock Text="Học sinh"/>
+                        <ComboBox x:Name="cbHocSinh"
+                                  Height="36"
+                                  DisplayMemberPath="HoTen"
+                                  SelectedValuePath="Id"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="0 0 10 0">
+                        <TextBlock Text="Lớp học"/>
+                        <ComboBox x:Name="cbLopHoc"
+                                  Height="36"
+                                  DisplayMemberPath="TenLop"
+                                  SelectedValuePath="Id"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" Margin="0 0 10 0">
+                        <TextBlock Text="Môn học"/>
+                        <ComboBox x:Name="cbMonHoc"
+                                  Height="36"
+                                  DisplayMemberPath="TenMon"
+                                  SelectedValuePath="Id"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="3" Margin="0 0 10 0">
+                        <TextBlock Text="Học kỳ"/>
+                        <TextBox x:Name="txtHocKy"
+                                 Height="36"
+                                 Padding="5"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="4">
+                        <TextBlock Text="Năm học"/>
+                        <TextBox x:Name="txtNamHoc"
+                                 Height="36"
+                                 Padding="5"/>
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- Hàng 2 -->
+                <Grid Margin="0 15 0 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+
+                        <TextBlock Text="Loại điểm"/>
+
+                        <ComboBox x:Name="cbLoaiDiem"
+                                  Height="36">
+
+                            <ComboBoxItem Content="Miệng"/>
+                            <ComboBoxItem Content="15 phút"/>
+                            <ComboBoxItem Content="1 tiết"/>
+                            <ComboBoxItem Content="Giữa kỳ"/>
+                            <ComboBoxItem Content="Cuối kỳ"/>
+
+                        </ComboBox>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+
+                        <TextBlock Text="Điểm"/>
+
+                        <TextBox x:Name="txtGiaTri"
+                                 Height="36"
+                                 Padding="5"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- Nút -->
+                <StackPanel Orientation="Horizontal"
+                            Margin="0 22 0 0">
+
+                    <Button x:Name="btnAdd"
+                            Content="Thêm"
+                            Width="110"
+                            Height="40"
+                            Background="#2563EB"
+                            Foreground="White"
+                            Click="BtnAdd_Click"/>
+
+                    <Button x:Name="btnUpdate"
+                            Content="Sửa"
+                            Width="110"
+                            Height="40"
+                            Margin="12 0 0 0"
+                            Background="#16A34A"
+                            Foreground="White"
+                            Click="BtnUpdate_Click"/>
+
+                    <Button x:Name="btnDelete"
+                            Content="Xóa"
+                            Width="110"
+                            Height="40"
+                            Margin="12 0 0 0"
+                            Background="#DC2626"
+                            Foreground="White"
+                            Click="BtnDelete_Click"/>
+
+                    <Button x:Name="btnClear"
+                            Content="Làm mới"
+                            Width="110"
+                            Height="40"
+                            Margin="12 0 0 0"
+                            Click="BtnClear_Click"/>
+
+                </StackPanel>
+
             </StackPanel>
+
         </Border>
 
-        <Border Grid.Row="2" Background="White" CornerRadius="12" Padding="20">
-            <DataGrid x:Name="dgGrades" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="DgGrades_SelectionChanged">
+        <!-- Bảng -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="14"
+                Padding="20">
+
+            <DataGrid x:Name="dgGrades"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      SelectionChanged="DgGrades_SelectionChanged">
+
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="60"/>
-                    <DataGridTextColumn Header="Mã HS" Binding="{Binding MaHS}" Width="100"/>
-                    <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}" Width="180"/>
-                    <DataGridTextColumn Header="Lớp" Binding="{Binding TenLop}" Width="100"/>
-                    <DataGridTextColumn Header="Môn" Binding="{Binding TenMon}" Width="150"/>
-                    <DataGridTextColumn Header="Loại điểm" Binding="{Binding LoaiDiem}" Width="100"/>
-                    <DataGridTextColumn Header="Điểm" Binding="{Binding GiaTri}" Width="80"/>
-                    <DataGridTextColumn Header="Học kỳ" Binding="{Binding HocKy}" Width="90"/>
-                    <DataGridTextColumn Header="Năm học" Binding="{Binding NamHoc}" Width="110"/>
+
+                    <DataGridTextColumn Header="ID"
+                                        Binding="{Binding Id}"
+                                        Width="60"/>
+
+                    <DataGridTextColumn Header="Mã HS"
+                                        Binding="{Binding MaHS}"
+                                        Width="90"/>
+
+                    <DataGridTextColumn Header="Họ tên"
+                                        Binding="{Binding HoTen}"
+                                        Width="180"/>
+
+                    <DataGridTextColumn Header="Lớp"
+                                        Binding="{Binding TenLop}"
+                                        Width="100"/>
+
+                    <DataGridTextColumn Header="Môn học"
+                                        Binding="{Binding TenMon}"
+                                        Width="150"/>
+
+                    <DataGridTextColumn Header="Loại điểm"
+                                        Binding="{Binding LoaiDiem}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Điểm"
+                                        Binding="{Binding GiaTri}"
+                                        Width="80"/>
+
+                    <DataGridTextColumn Header="Học kỳ"
+                                        Binding="{Binding HocKy}"
+                                        Width="90"/>
+
+                    <DataGridTextColumn Header="Năm học"
+                                        Binding="{Binding NamHoc}"
+                                        Width="110"/>
+
                 </DataGrid.Columns>
+
             </DataGrid>
+
         </Border>
+
     </Grid>
+
 </Page>

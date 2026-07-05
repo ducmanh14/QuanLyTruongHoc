@@ -23,23 +23,23 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Margin="0 0 10 0">
                         <TextBlock Text="ID lớp"/>
-                        <TextBox x:Name="txtLopId" Height="35"/>
+                        <TextBox x:Name="txtLopId" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Margin="0 0 10 0">
                         <TextBlock Text="ID giáo viên"/>
-                        <TextBox x:Name="txtGiaoVienId" Height="35"/>
+                        <TextBox x:Name="txtGiaoVienId" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2" Margin="0 0 10 0">
                         <TextBlock Text="ID môn học"/>
-                        <TextBox x:Name="txtMonHocId" Height="35"/>
+                        <TextBox x:Name="txtMonHocId" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" Margin="0 0 10 0">
                         <TextBlock Text="Học kỳ"/>
-                        <TextBox x:Name="txtHocKy" Height="35"/>
+                        <TextBox x:Name="txtHocKy" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="4">
                         <TextBlock Text="Năm học"/>
-                        <TextBox x:Name="txtNamHoc" Height="35"/>
+                        <TextBox x:Name="txtNamHoc" Height="35" Padding="5"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="0 18 0 0">

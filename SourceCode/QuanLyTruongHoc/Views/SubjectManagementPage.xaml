@@ -21,15 +21,15 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0" Margin="0 0 10 0">
                         <TextBlock Text="Mã môn"/>
-                        <TextBox x:Name="txtMaMon" Height="35"/>
+                        <TextBox x:Name="txtMaMon" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Margin="0 0 10 0">
                         <TextBlock Text="Tên môn"/>
-                        <TextBox x:Name="txtTenMon" Height="35"/>
+                        <TextBox x:Name="txtTenMon" Height="35" Padding="5"/>
                     </StackPanel>
                     <StackPanel Grid.Column="2">
                         <TextBlock Text="Số tiết"/>
-                        <TextBox x:Name="txtSoTiet" Height="35"/>
+                        <TextBox x:Name="txtSoTiet" Height="35" Padding="5"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="0 18 0 0">
