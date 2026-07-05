@@ -20,8 +20,6 @@
 - [Lộ trình phát triển](#-lộ-trình-phát-triển-roadmap)
 - [Đóng góp](#-đóng-góp)
 - [Thành viên thực hiện](#-thành-viên-thực-hiện)
-- [Giấy phép](#-giấy-phép)
-
 ---
 
 ## 📖 Giới thiệu
