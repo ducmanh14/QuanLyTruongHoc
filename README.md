@@ -220,6 +220,7 @@ Mọi đóng góp đều được hoan nghênh! Để đóng góp cho dự án:
 
 **Trường / Khoa:** _Đại Học Phenikaa/CNTT_
 
+**Link video demo:** https://drive.google.com/file/d/1xFxvQWGnRXOWJBWS4hoOK1OoHu68YNcA/view?usp=sharing
 ---
 
 <p align="center">Made with ❤️ for học tập và nghiên cứu quản lý trường học.</p>
